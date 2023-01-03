@@ -1,0 +1,553 @@
+ git --version
+git version 2.39.0.windows.2
+PS C:\Users\INCUBATION LAB> git config --global user.name "Prem-Jain"
+PS C:\Users\INCUBATION LAB> git config --global user.email "premj801@gmail.com"
+PS C:\Users\INCUBATION LAB> git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+PS C:\Users\INCUBATION LAB> git config -l
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Prem-Jain
+user.email=premj801@gmail.com
+PS C:\Users\INCUBATION LAB> git config -h
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+PS C:\Users\INCUBATION LAB> git help config
+
+PS C:\Users\INCUBATION LAB> mkdir gitPractice
+
+
+    Directory: C:\Users\INCUBATION LAB
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          1/3/2023  10:00 AM                gitPractice
+
+
+PS C:\Users\INCUBATION LAB> ls
+
+
+    Directory: C:\Users\INCUBATION LAB
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          1/3/2023   9:00 AM                593_ITCA
+d-r---         9/29/2022   3:33 PM                Contacts
+d-----         9/15/2022   4:11 PM                demo2
+d-r---          1/3/2023   8:53 AM                Desktop
+d-r---         12/7/2022   4:07 PM                Documents
+d-r---          1/3/2023   9:08 AM                Downloads
+d-----         9/16/2022   4:13 PM                eclipse
+d-----         9/16/2022   4:22 PM                eclipse-workspace
+d-r---         9/29/2022   3:33 PM                Favorites
+d-----        12/30/2022  11:28 AM                git
+d-----          1/3/2023  10:00 AM                gitPractice
+
+PS C:\Users\INCUBATION LAB> cd gitPractice
+PS C:\Users\INCUBATION LAB\gitPractice> git init Prac_Repo
+Initialized empty Git repository in C:/Users/INCUBATION LAB/gitPractice/Prac_Repo/.git/
+PS C:\Users\INCUBATION LAB\gitPractice> cd Prac_Repo
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> echo "Git Practice. Make sure to create directory then init a repositary and move that repositary then create a file" >> Report.txt
+
+
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> dir
+
+
+    Directory: C:\Users\INCUBATION LAB\gitPractice\Prac_Repo
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          1/3/2023  10:10 AM            226 Report.txt
+
+
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Report.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git add Report.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Report.txt
+
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git commit -m "Report till 10.10AM. First Commit"
+[master (root-commit) a08fb37] Report till 10.10AM. First Commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Report.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>
+
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> echo "Git Practice. Make sure to create directory then init a repositary and move that repositary then create a file and use >> while creating a file" >> Report.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Report.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git restore Report.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> echo "Git Practice. Make sure to create directory then init a repositary and move that repositary then create a file and use >> while creating a file" >> Report.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Report.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git add Report.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Report.txt
+
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git commit Report.txt -m "Modified Report"
+[master 628ac2e] Modified Report
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>
+
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git log
+commit 628ac2e82e24e53519e349c5e8696c4eab5aa49b (HEAD -> master)
+Author: Prem-Jain <premj801@gmail.com>
+Date:   Tue Jan 3 10:29:08 2023 +0530
+
+    Modified Report
+
+commit 973a308f860589331718eeeaf6f17043426afc5d
+Author: Prem-Jain <premj801@gmail.com>
+Date:   Tue Jan 3 10:17:40 2023 +0530
+
+    Added Practice.txt
+
+commit a08fb378f3a1276beee0430f9aa30b036945d5ef
+Author: Prem-Jain <premj801@gmail.com>
+Date:   Tue Jan 3 10:13:10 2023 +0530
+
+    Report till 10.10AM. First Commit
+    
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> echo "This is test file for pushing all files at once" >> PushAll1.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> echo "This is test file for pushing all files at once" >> PushAll2.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> echo "This is test file for pushing all files at once" >> PushAll3.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        PushAll1.txt
+        PushAll2.txt
+        PushAll3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git add .
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   PushAll1.txt
+        new file:   PushAll2.txt
+        new file:   PushAll3.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git commit -m "Three files added in Repo"
+[master 873cb37] Three files added in Repo
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 PushAll1.txt
+ create mode 100644 PushAll2.txt
+ create mode 100644 PushAll3.txt
+PS C:\Users\INCUBATION LAB\gitPractice\Prac_Repo> git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git remote add origin https://github.com/user/repo.git
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (12/12), 1.21 KiB | 1.21 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Prem-Jain/Git_Practice/pull/new/master
+remote:
+To https://github.com/Prem-Jain/Git_Practice.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git push
+Everything up-to-date
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git remote remove origin
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 697 bytes | 9.00 KiB/s, done.
+From https://github.com/Prem-Jain/Git_Practice
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+Updating 873cb37..85c6e88
+Fast-forward
+ Practice.txt | Bin 82 -> 65 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git show Practice.txt
+commit 85c6e8873b99e892168df52a8da319fef3e67e5a (HEAD -> master, origin/master)
+Author: J Prem <88187995+Prem-Jain@users.noreply.github.com>
+Date:   Tue Jan 3 11:58:04 2023 +0530
+
+    Update Practice.txt
+
+diff --git a/Practice.txt b/Practice.txt
+index 65def08..7a61c98 100644
+Binary files a/Practice.txt and b/Practice.txt differ
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>start Practice.txt
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git branch
+* master
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git clone https://github.com/Prem-Jain/Git_Practice.git
+Cloning into 'Git_Practice'...
+remote: Enumerating objects: 35, done.
+remote: Counting objects: 100% (35/35), done.
+remote: Compressing objects: 100% (27/27), done.
+remote: Total 35 (delta 9), reused 25 (delta 6), pack-reused 0
+Receiving objects: 100% (35/35), 4.88 KiB | 4.88 MiB/s, done.
+Resolving deltas: 100% (9/9), done.
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git clone -b master https://github.com/Prem-Jain/Git_Practice.git
+fatal: destination path 'Git_Practice' already exists and is not an empty directory.
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>git clone -b master https://github.com/Prem-Jain/Git_Practice.git
+Cloning into 'Git_Practice'...
+remote: Enumerating objects: 35, done.
+remote: Counting objects: 100% (35/35), done.
+remote: Compressing objects: 100% (27/27), done.
+remote: Total 35 (delta 9), reused 25 (delta 6), pack-reused 0
+Receiving objects: 100% (35/35), 4.88 KiB | 4.88 MiB/s, done.
+Resolving deltas: 100% (9/9), done.
+
+
+C:\Users\INCUBATION LAB\gitPractice\Prac_Repo>cd..
+
+C:\Users\INCUBATION LAB\gitPractice>git init NewBrachRep
+Initialized empty Git repository in C:/Users/INCUBATION LAB/gitPractice/NewBrachRep/.git/
+
+C:\Users\INCUBATION LAB\gitPractice>cd NewBrachRep
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>echo "Test File for new Brach" >> test1.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>echo "Test File for new Brach" >> test2.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>echo "Test File for new Brach" >> test3.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test1.txt
+        test2.txt
+        test3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git add .
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test1.txt
+        new file:   test2.txt
+        new file:   test3.txt
+
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git commit -m "New Branch added"
+[master (root-commit) cb60e7b] New Branch added
+ 3 files changed, 3 insertions(+)
+ create mode 100644 test1.txt
+ create mode 100644 test2.txt
+ create mode 100644 test3.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git log
+commit cb60e7bd38fdab0f81933973ee195db37821e0d1 (HEAD -> master)
+Author: Prem-Jain <premj801@gmail.com>
+Date:   Tue Jan 3 12:46:57 2023 +0530
+
+    New Branch added
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git branch
+* master
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git branch NewBranch
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git branch
+  NewBranch
+* master
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git push origin NewBranch
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git checkout NewBranch
+Switched to branch 'NewBranch'
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git push origin NewBranch
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git branch
+* NewBranch
+  master
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git ls-files
+test1.txt
+test2.txt
+test3.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>start test1.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>echo "MODIFIED" >> test2.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>echo "Adding new File in NewBranch" >> test4.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git status
+On branch NewBranch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test1.txt
+        modified:   test2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test4.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git add .
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git commit -m "New Branch edited"
+[NewBranch f0f2563] New Branch edited
+ 3 files changed, 3 insertions(+)
+ create mode 100644 test4.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git ls-files
+test1.txt
+test2.txt
+test3.txt
+test4.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git status
+On branch NewBranch
+nothing to commit, working tree clean
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git checkout master
+Switched to branch 'master'
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git ls-files
+test1.txt
+test2.txt
+test3.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git branch OneMoreBranch
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git branch
+  NewBranch
+  OneMoreBranch
+* master
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git checkout OneMoreBranch
+Switched to branch 'OneMoreBranch'
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git ls-files
+test1.txt
+test2.txt
+test3.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>echo "Modifying file3 as part of One More Branch" >> test3.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>echo "OneMoreFile in OneMoreBranch" >> test5.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git ls-files
+test1.txt
+test2.txt
+test3.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git add .
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git commit -m "Files added and edited in OneMoreBranch"
+[OneMoreBranch 7a8caa4] Files added and edited in OneMoreBranch
+ 2 files changed, 2 insertions(+)
+ create mode 100644 test5.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git ls-files
+test1.txt
+test2.txt
+test3.txt
+test5.txt
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>
+
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git checkout master
+Switched to branch 'master'
+
+C:\Users\INCUBATION LAB\gitPractice\NewBrachRep>git merge OneMoreBranch
+Updating cb60e7b..7a8caa4
+Fast-forward
+ test3.txt | 1 +
+ test5.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 test5.txt
+ 
+ 
